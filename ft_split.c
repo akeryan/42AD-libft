@@ -54,7 +54,7 @@ char	**foo(char **out, unsigned int pos, char const *str, char c)
 		str++;
 	if (*str == '\0')
 		return (out);
-	out[pos] = (char *)malloc(wordLen(str, c, 0) + 1);
+	out[pos] = (char *)malloc(word_len(str, c, 0) + 1);
 	if (out[pos] == NULL)
 	{
 		free_all(out);
@@ -73,7 +73,7 @@ char	**ft_split(char const *s, char c)
 
 	if (s == NULL)
 		return (NULL);
-	out = (char **)malloc(sizeof(char *) * (countWords(s, c) + 1));
+	out = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (out == NULL)
 		return (NULL);
 	out = foo(out, 0, s, c);
