@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: student42abudhabi <student42abudhabi@st    +#+  +:+       +#+        */
+/*   By: akeryan <akeryan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 13:00:25 by akeryan           #+#    #+#             */
-/*   Updated: 2022/01/04 20:39:16 by student42ab      ###   ########.fr       */
+/*   Updated: 2023/10/26 07:37:21 by akeryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,15 @@ char	**foo(char **out, unsigned int pos, char const *str, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**out;
+	int len;
 
 	if (s == NULL)
 		return (NULL);
-	out = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
+	len = count_words(s, c) + 1;
+	out = (char **)malloc(sizeof(char *) * len);
 	if (out == NULL)
 		return (NULL);
+	out[len - 1] = NULL;
 	out = foo(out, 0, s, c);
 	return (out);
 }
