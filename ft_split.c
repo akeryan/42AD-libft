@@ -6,13 +6,13 @@
 /*   By: akeryan <akeryan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 13:00:25 by akeryan           #+#    #+#             */
-/*   Updated: 2023/10/26 07:37:21 by akeryan          ###   ########.fr       */
+/*   Updated: 2023/11/24 15:59:34 by akeryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	free_all(char **str)
+void	free_split(char **str)
 {
 	int	i;
 
@@ -57,7 +57,7 @@ char	**foo(char **out, unsigned int pos, char const *str, char c)
 	out[pos] = (char *)malloc(word_len(str, c, 0) + 1);
 	if (out[pos] == NULL)
 	{
-		free_all(out);
+		free_split(out);
 		return (out);
 	}
 	i = 0;
